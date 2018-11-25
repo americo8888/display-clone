@@ -4,7 +4,7 @@
 sudo dpkg --configure -a
 sudo apt-get update
 
-# Uninstall the apt-listchanges package to allow silent install of ca certificates (201704030)
+# Uninstall the apt-listchanges package to allow silent install of ca certificates
 # http://unix.stackexchange.com/questions/124468/how-do-i-resolve-an-apparent-hanging-update-process
 sudo apt-get -y remove apt-listchanges
 
@@ -17,15 +17,14 @@ sudo apt-get -y dist-upgrade
 sudo apt-get -y install git
 sudo apt-get -y install cmake 
 cd /home/pi
-echo "Installing development load"
+echo "Instalando el repositorio de americo8888"
 wget https://github.com/americo8888/display-clone/archive/master.zip
 
-# Unzip the rpidatv software and copy to the Pi
+# Unzip the software and copy to the Pi
 unzip -o master.zip
 mv -master display
 rm master.zip
 
-# TouchScreen GUI
 # FBCP : Duplicate Framebuffer 0 -> 1
 cd /home/pi/
 wget https://github.com/tasanakorn/rpi-fbcp/archive/master.zip
@@ -41,9 +40,6 @@ cmake ..
 make
 sudo install fbcp /usr/local/bin/fbcp
 cd ../../
-
-# Install omxplayer
-sudo apt-get -y install omxplayer
 
 # Install Waveshare 3.5A DTOVERLAY
 cd /home/pi/display/scripts/
