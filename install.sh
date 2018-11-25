@@ -10,7 +10,7 @@ wget https://github.com/americo8888/display-clone/archive/master.zip
 
 # Unzip the software and copy to the Pi
 unzip -o display-clone-master.zip
-mv -display-clone-master display
+mv display-clone-master display
 rm display-clone-master.zip
 
 # FBCP : Duplicate Framebuffer 0 -> 1
@@ -38,16 +38,6 @@ sudo cp ./waveshare35b.dtbo /boot/overlays/
 
 # Install the Waveshare 3.5A driver
 sudo bash -c 'cat /home/pi/display/scripts/configs/waveshare_mkr.txt >> /boot/config.txt'
-
-# Download, compile and install the executable for hardware shutdown button
-# Updated version that is less trigger-happy (201705200)
-git clone https://github.com/philcrump/pi-sdn /home/pi/pi-sdn-build
-# Install new version that sets swapoff
-cp -f /home/pi/rpidatv/src/pi-sdn/main.c /home/pi/pi-sdn-build/main.c
-cd /home/pi/pi-sdn-build
-make
-mv pi-sdn /home/pi/
-cd /home/pi
 
 # Create directory for Autologin link
 sudo mkdir -p /etc/systemd/system/getty.target.wants
