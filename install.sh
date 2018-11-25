@@ -1,18 +1,6 @@
 #!/bin/bash
 
-# Update the package manager
-sudo dpkg --configure -a
 sudo apt-get update
-
-# Uninstall the apt-listchanges package to allow silent install of ca certificates
-# http://unix.stackexchange.com/questions/124468/how-do-i-resolve-an-apparent-hanging-update-process
-sudo apt-get -y remove apt-listchanges
-
-# -------- Upgrade distribution ------
-
-# Update the distribution
-sudo apt-get -y dist-upgrade
-
 # Install the packages that we need
 sudo apt-get -y install git
 sudo apt-get -y install cmake 
@@ -21,9 +9,9 @@ echo "Instalando el repositorio de americo8888"
 wget https://github.com/americo8888/display-clone/archive/master.zip
 
 # Unzip the software and copy to the Pi
-unzip -o master.zip
-mv -master display
-rm master.zip
+unzip -o display-clone-master.zip
+mv -display-clone-master display
+rm display-clone-master.zip
 
 # FBCP : Duplicate Framebuffer 0 -> 1
 cd /home/pi/
