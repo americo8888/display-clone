@@ -1,2 +1,2 @@
 # display-clone
-Un script para ayudar a instalar en la Rpi el display clon (de WareShare) SPI de 3,5 pulgadas vendido en Aliexpress.
+Un script y archivos útiles para instalar en la Rpi el popular y barato display clon (de WareShare) SPI de 3,5 pulgadas vendido en Aliexpress. Probado en RPi A+ y RPi Zero con OS 2018-10-09-raspbian-stretch-lite.img, como parte del desarrollo de un terminal Linux basado en Rpi para el aprendizaje de Programación.
